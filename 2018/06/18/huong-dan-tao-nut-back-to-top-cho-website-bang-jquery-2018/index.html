@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang=vi>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Khi bạn lướt web, đôi khi bạn đọc phải một bài viết rất là dài. Lúc đọc xong bạn lại phải scroll chuột để quay lại đầu trang web để chuyển sang tin khác. Việc làm này tuy không tốn nhiều thời gian như">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018">
+<meta property="og:url" content="http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/index.html">
+<meta property="og:site_name" content="PhanThanhGit">
+<meta property="og:description" content="Khi bạn lướt web, đôi khi bạn đọc phải một bài viết rất là dài. Lúc đọc xong bạn lại phải scroll chuột để quay lại đầu trang web để chuyển sang tin khác. Việc làm này tuy không tốn nhiều thời gian như">
+<meta property="og:locale" content="vi_VN">
+<meta property="article:published_time" content="2018-06-18T16:11:31.000Z">
+<meta property="article:modified_time" content="2020-03-13T09:58:52.394Z">
+<meta property="article:author" content="dpthanh">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="jquery">
+<meta property="article:tag" content="thủ thuật website">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/06/04/huong-dan-root-may-android-bang-kingroot/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Bài trước</span>
+      <span id="i-next" class="info" style="display:none;">Bài tiếp theo</span>
+      <span id="i-top" class="info" style="display:none;">Về đầu trang</span>
+      <span id="i-share" class="info" style="display:none;">Chia sẻ bài viết</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&text=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&title=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&is_video=false&description=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018&body=Check out this article: http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&title=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&title=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&title=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&title=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&name=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&t=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">PhanThanhGit</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-06-18T16:11:31.000Z" itemprop="datePublished">2018-06-18</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Website-Coding/">Website Coding</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/javascript/" rel="tag">javascript</a>, <a class="tag-link" href="/tags/jquery/" rel="tag">jquery</a>, <a class="tag-link" href="/tags/thu-thuat-website/" rel="tag">thủ thuật website</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Khi bạn lướt web, đôi khi bạn đọc phải một bài viết rất là dài. Lúc đọc xong bạn lại phải scroll chuột để quay lại đầu trang web để chuyển sang tin khác. Việc làm này tuy không tốn nhiều thời gian nhưng sẽ khiến chúng ta cảm thấy khó chịu khi phải lặp đi lặp lại chuyện đó nhiều lần. Vậy thì hôm nay mình xin hướng dẫn các bạn cách tạo nút Back To Top cho website của bạn một cách đơn giản bằng Jquery. Mình không dài dòng nữa, mình xin vào hướng dẫn luôn. Đầu tiên bạn cần thêm thư viện Jquery vào website. Copy đoạn code sau thả vào thẻ <head>:</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<p>Tiếp theo, bạn thêm thư viện icon fontawesome này vào cho mình vì chúng ta sẽ dùng đến nó. Copy và dán vào thẻ <head>:</p>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<p>Bây giờ, chúng ta cùng vào những giai đoạn chính để tạo ra nút Back To Top. Đầu tiên là chúng ta tạo layout và style cho nút Back To Top.</p>
+<span id="back-to-top">
+<!\-\- đây là icon mình lấy từ fontawesome -->
+<i class="fas fa-chevron-up"></i>
+</span>
+
+<p>Tạo giao diện (stylesheet) cho cái nút đó:</p>
+<p>#back-to-top {<br>    cursor: pointer;<br>    position: fixed;<br>    bottom: 20px;<br>    right: 20px;<br>    background: #189EFF;<br>    color: #fff;<br>    padding: 15px;<br>}</p>
+<p>Cuối cùng là viết hàm Jquery cho cái nút đó hoạt động:</p>
+<p>$(document).ready(function(){<br>    $(window).scroll(function(){<br>        if ($(this).scrollTop() &gt; 100) { //thực hiện lệnh điều kiện Khi lăn chuột xuống dưới hơn 100px<br>            $(‘#back-to-top’).fadeIn(); //Xuất hiện nút<br>        } else {<br>            $(‘#back-to-top’).fadeOut(); //Ngược lại thì ẩn nút<br>        }<br>    });<br>    $(‘#back-to-top’).click(function(){<br>        $(“html, body”).animate({ scrollTop: 0 }, 600); //Animation giúp hoạt ảnh scroll ngược lên đầu trang sẽ mượt hơn<br>        return false;<br>    });<br>});</p>
+<p>Bạn nên đặt đoạn code jquery này ở đầu trang <head> hoặc cuối trang dưới <footer>. Tuy nhiên mình khuyên là nên đặt ở đầu để khi load trang nó không bị hiển thị nút Back To Top lên trước mặc dù khi mới load ta chưa hề scroll chuột. Đây là thành quả. Chúc các bạn thành công.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&text=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&title=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&is_video=false&description=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018&body=Check out this article: http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&title=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&title=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&title=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&title=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&name=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/&t=Hướng dẫn tạo nút Back To Top cho website bằng Jquery 2018" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Chia sẻ</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Về đầu trang</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Bản quyền &copy; 2020 dpthanh
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

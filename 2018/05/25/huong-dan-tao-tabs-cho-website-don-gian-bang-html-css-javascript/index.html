@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang=vi>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Tab là một form khá phổ biến và quen thuộc với nhiều website. Vậy họ đã tạo ra những kiểu tab đó bằng cách nào? Hôm nay, mình sẽ hướng dẫn cho các bạn cách đơn giản để tạo ra tabs với HTML, CSS và Jav">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript">
+<meta property="og:url" content="http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/index.html">
+<meta property="og:site_name" content="PhanThanhGit">
+<meta property="og:description" content="Tab là một form khá phổ biến và quen thuộc với nhiều website. Vậy họ đã tạo ra những kiểu tab đó bằng cách nào? Hôm nay, mình sẽ hướng dẫn cho các bạn cách đơn giản để tạo ra tabs với HTML, CSS và Jav">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/05/Capture.png">
+<meta property="article:published_time" content="2018-05-25T05:46:00.000Z">
+<meta property="article:modified_time" content="2020-03-13T09:58:52.394Z">
+<meta property="article:author" content="dpthanh">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://phanthanhblog.com/wp-content/uploads/2018/05/Capture.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/05/20/react-native-chatbox-realtime-with-firebase/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Bài trước</span>
+      <span id="i-next" class="info" style="display:none;">Bài tiếp theo</span>
+      <span id="i-top" class="info" style="display:none;">Về đầu trang</span>
+      <span id="i-share" class="info" style="display:none;">Chia sẻ bài viết</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&text=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&title=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&is_video=false&description=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript&body=Check out this article: http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&title=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&title=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&title=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&title=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&name=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&t=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#contentA"><span class="toc-number">1.</span> <span class="toc-text">Content TabA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contentB"><span class="toc-number">2.</span> <span class="toc-text">Content TabB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contentC"><span class="toc-number">3.</span> <span class="toc-text">Content TabB</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">PhanThanhGit</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-05-25T05:46:00.000Z" itemprop="datePublished">2018-05-25</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Website-Coding/">Website Coding</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/javascript/" rel="tag">javascript</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Tab là một form khá phổ biến và quen thuộc với nhiều website. Vậy họ đã tạo ra những kiểu tab đó bằng cách nào? Hôm nay, mình sẽ hướng dẫn cho các bạn cách đơn giản để tạo ra tabs với HTML, CSS và JavaScript. Để làm được bạn phải biết sơ qua về HTMl, CSS, và JS (javascript).  Bước 1: Tạo giao diện cho tabs bằng HTML và CSS: Đầu tiên là code HTML. Gồm có 2 layout chính đó là layout cho tab (class: tab-menu) và layout cho nội dung tab (class: content-tab). Chèn code HTML này trong thẻ <body>:</p>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<div class="tab-menu">
+<a class="tab active" id="tabA" onclick="ShowTab('tabA','contentA')">Title A</a>
+<a class="tab" id="tabB" onclick="ShowTab('tabB', 'contentB')">Title B</a>
+<a class="tab" id="tabC" onclick="ShowTab('tabC','contentC')">Title C</a>
+</div>
+<div class="content-tab">
+<div class="content-tab-item active-tab" id="contentA">
+<h2>Content TabA</h2>
+</div>
+<div class="content-tab-item" id="contentB">
+<h2>Content TabB</h2>
+</div>
+<div class="content-tab-item" id="contentC">
+<h2>Content TabB</h2>
+</div>
+</div>
+
+<p>Giờ thì style lại cho nó đẹp tí. Chèn code CSS sau vào <head>:</p>
+<pre><code>* {
+  font-family: &apos;Roboto&apos;, sans-serif;
+}
+.tab-menu {
+  margin-top: 20px;
+}
+.tab {
+  padding: 10px 20px;
+  background: #304FFE;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.tab+.tab {
+  margin-left: 10px;
+}
+.active {
+  opacity: 0.5;
+}
+.content-tab-item {
+  display: none;
+}
+.active-tab {
+  display: inline-block;
+}</code></pre><p>Kết quả sẽ được như sau: <img src="https://phanthanhblog.com/wp-content/uploads/2018/05/Capture.png" alt=""> Bước 2: Đây là bước quan trọng nhất, đó là viết JS xử lý sự kiện click cho các tab: Chèn đoạn code JS sau vào thẻ <head> nhớ đặt nó trong thử <script>:</p>
+<pre><code>var tabs = document.getElementsByClassName(&quot;tab&quot;);//Lấy địa chỉ class của tab
+var contents = document.getElementsByClassName(&quot;content-tab-item&quot;); //Lấy địa chỉ class phần nội dung
+//Hàm xử lý sự kiện click cho tab
+function ShowTab(tab, content){
+  var i;
+  var tabs = document.getElementsByClassName(&quot;tab&quot;);
+  var contents = document.getElementsByClassName(&quot;content-tab-item&quot;);
+  var tabclick = document.getElementById(tab);
+  var contentsclick = document.getElementById(content);
+  for(i = 0; i &lt; tabs.length; i++){
+    tabs[i].classList.remove(&quot;active&quot;);//xoá thuộc tính active của tab
+    contents[i].classList.remove(&quot;active-tab&quot;);//xoá thuộc tính active của content
+  }
+  tabclick.classList.add(&quot;active&quot;); //gán thuộc tính active cho tab được chọn
+  contentsclick.classList.add(&quot;active-tab&quot;);// gán thuộc tính active-tab cho content của tab đc chọn
+}</code></pre><p>Và đây là kết quả:</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#contentA"><span class="toc-number">1.</span> <span class="toc-text">Content TabA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contentB"><span class="toc-number">2.</span> <span class="toc-text">Content TabB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contentC"><span class="toc-number">3.</span> <span class="toc-text">Content TabB</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&text=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&title=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&is_video=false&description=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript&body=Check out this article: http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&title=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&title=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&title=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&title=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&name=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/&t=Hướng dẫn tạo tabs cho website đơn giản bằng HTML, CSS, JavaScript" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Chia sẻ</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Về đầu trang</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Bản quyền &copy; 2020 dpthanh
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

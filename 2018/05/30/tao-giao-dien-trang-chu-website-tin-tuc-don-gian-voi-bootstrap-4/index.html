@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang=vi>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Bootstrap là cái tên đã quá quen thuộc với các lập trình viên website. Bootstrap là một front-end framework khá phổ biến, được nhiều người tin dùng. Nhưng gì mà Bootstrap mang lại còn hơn cả mong đợi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4">
+<meta property="og:url" content="http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/index.html">
+<meta property="og:site_name" content="PhanThanhGit">
+<meta property="og:description" content="Bootstrap là cái tên đã quá quen thuộc với các lập trình viên website. Bootstrap là một front-end framework khá phổ biến, được nhiều người tin dùng. Nhưng gì mà Bootstrap mang lại còn hơn cả mong đợi">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/05/bootstrap-4.x53576.jpg">
+<meta property="og:image" content="http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/...">
+<meta property="article:published_time" content="2018-05-30T15:04:49.000Z">
+<meta property="article:modified_time" content="2020-03-13T09:58:52.395Z">
+<meta property="article:author" content="dpthanh">
+<meta property="article:tag" content="thủ thuật website">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="html">
+<meta property="article:tag" content="bootstrap">
+<meta property="article:tag" content="bootstrap 4">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://phanthanhblog.com/wp-content/uploads/2018/05/bootstrap-4.x53576.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/05/25/huong-dan-tao-tabs-cho-website-don-gian-bang-html-css-javascript/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Bài trước</span>
+      <span id="i-next" class="info" style="display:none;">Bài tiếp theo</span>
+      <span id="i-top" class="info" style="display:none;">Về đầu trang</span>
+      <span id="i-share" class="info" style="display:none;">Chia sẻ bài viết</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&text=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&title=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&is_video=false&description=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4&body=Check out this article: http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&title=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&title=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&title=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&title=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&name=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&t=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">Tiêu đề bài viết</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">PhanThanhGit</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-05-30T15:04:49.000Z" itemprop="datePublished">2018-05-30</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Website-Coding/">Website Coding</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/bootstrap/" rel="tag">bootstrap</a>, <a class="tag-link" href="/tags/bootstrap-4/" rel="tag">bootstrap 4</a>, <a class="tag-link" href="/tags/css/" rel="tag">css</a>, <a class="tag-link" href="/tags/html/" rel="tag">html</a>, <a class="tag-link" href="/tags/thu-thuat-website/" rel="tag">thủ thuật website</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p><img src="https://phanthanhblog.com/wp-content/uploads/2018/05/bootstrap-4.x53576.jpg" alt=""> Bootstrap là cái tên đã quá quen thuộc với các lập trình viên website. Bootstrap là một front-end framework khá phổ biến, được nhiều người tin dùng. Nhưng gì mà Bootstrap mang lại còn hơn cả mong đợi của người dùng. Nó cung cấp một hệ thống các style đồ sộ, đơn giản, dễ sử dụng. Công việc của chúng ta chỉ là nhúng nó vào website và sử dụng các class, form được cung cấp sẵn. Bạn có thể dễ dàng tìm thấy các thông tin về form, style, css này trên DOC của Bootstrap. Vậy hôm nay, tận dụng lời thế đó của Bootstrap mình xin hướng dẫn các bạn sử dụng nó để tạo ra một giao diện trang chủ website tin tức đơn giản. Chúng ta cùng bước ngay và thực hiện thôi. Đầu tiên, các bạn phải nhúng Bootstrap vào thẻ <head> của trang. Đoạn code cần sử dụng như sau:</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<p>Công việc tiếp theo của bạn chỉ là đọc Document của bootstrap và sử dụng cái gì bạn muốn. Trước hết mình sẽ hướng dẫn bạn tạo thanh menu ở đầu website. Bạn vào link sau: <a href="https://getbootstrap.com/docs/4.0/" target="_blank" rel="noopener">getbootstrap.com</a> chọn Components &gt; Navbar bạn sẽ nhìn thấy đoạn code đầu tiên để tạo thanh menu, copy đoạn code đó và thả vào thẻ <body>:</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<p>Tiếp đến là phần hiển thị các bài viết mới nhất và sidebar chứa các widget nằm bên phải của trang. Để chia layout phần này, bạn có thể sử dụng Layout &gt; Grid. Dưới đây là 1 ví dụ mình đã chia sẵn:</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <!\-\- List bài đăng mới -->
+    </div>
+    <div class="col-md-3">
+      <!\-\- Sidebar - khu vực chứa widget -->
+    </div>
+  </div>
+</div>
+
+<p>Tiếp đến là tạo giao diện cho phần hiển thị danh sách bài viết mới nhất. Ở đây mình sử dụng Components &gt; Card. Chèn code phần này nằm ngay dưới dòng “<!-- List bài đăng mới -->“. Sau đây là mẫu code cho phần danh sách hiển thị bài viết:</p>
+<div class="card" style="width: 18rem;"> 
+  <img class="card-img-top" src="..." alt="Ảnh thumbnail bài viết">
+  <div class="card-header">
+      <h2>Tiêu đề bài viết</h2>
+  </div>
+  <div class="card-body">
+    <p class="card-text">Đoạn ngắn giới thiệu nội dung bài viết</p>
+  </div>
+  <div class="card-footer">
+    <a class="btn btn-primary" href="#">Xem thêm</a>
+  </div>
+</div>
+
+<p>Khu vực sidebar bạn có thể sử dụng lại Components &gt; Card hoặc Navs dạng tab để tạo các widget mà mình thích. Một phần hết sức quan trọng trong phần danh sách bài viết đó là phân trang hay là *<em>Pagination *</em>. Pagination nằm trong phần Components của Bootstrap, bạn có thể lên xem và chọn style mình thích. Ở đây mình chọn style đầu tiên mình nhìn thấy. Đặt code này nằm ngay duới danh sách bài viết.</p>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
+
+<p>Bootstrap hỗ trợ sẵn responsive nên bạn không cần phải tự tay responsive. Đây là thành quả cuối cùng. Chúc các bạn thành công.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">Tiêu đề bài viết</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&text=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&title=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&is_video=false&description=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4&body=Check out this article: http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&title=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&title=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&title=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&title=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&name=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/&t=Tạo giao diện trang chủ website tin tức đơn giản với Bootstrap 4" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Chia sẻ</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Về đầu trang</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Bản quyền &copy; 2020 dpthanh
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

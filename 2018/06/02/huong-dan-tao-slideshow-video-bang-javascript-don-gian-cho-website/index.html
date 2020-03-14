@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang=vi>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Slideshow video khá là phổ biến trên nhiều website. Họ dùng để trình chiếu các video quảng cáo, du lịch hay các khoá học,… Tuy nghiên chúng ta luôn tò mò về cách mà họ đã tạo ra slideshow video ó là n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website">
+<meta property="og:url" content="http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/index.html">
+<meta property="og:site_name" content="PhanThanhGit">
+<meta property="og:description" content="Slideshow video khá là phổ biến trên nhiều website. Họ dùng để trình chiếu các video quảng cáo, du lịch hay các khoá học,… Tuy nghiên chúng ta luôn tò mò về cách mà họ đã tạo ra slideshow video ó là n">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://img.youtube.com/vi/fxnz1ouehqw/maxresdefault.jpg">
+<meta property="og:image" content="https://img.youtube.com/vi/oAS8vzr3SxI/maxresdefault.jpg">
+<meta property="og:image" content="https://img.youtube.com/vi/hibIxiZQgJ8/maxresdefault.jpg">
+<meta property="og:image" content="https://img.youtube.com/vi/vG/_4FIsH5IY/maxresdefault.jpg">
+<meta property="og:image" content="https://img.youtube.com/vi/gyCqfJAnkJc/maxresdefault.jpg">
+<meta property="og:image" content="https://img.youtube.com/vi/Obs5rzZu540/maxresdefault.jpg">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/Capture.png">
+<meta property="article:published_time" content="2018-06-02T06:29:19.000Z">
+<meta property="article:modified_time" content="2020-03-13T09:58:52.394Z">
+<meta property="article:author" content="dpthanh">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="thủ thuật website">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="html">
+<meta property="article:tag" content="slideshow video">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.youtube.com/vi/fxnz1ouehqw/maxresdefault.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/06/02/10-theme-wordpress-tot-nhat-cho-blog-ca-nhan-thoi-trang-nhiep-anh-2018/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/05/30/tao-giao-dien-trang-chu-website-tin-tuc-don-gian-voi-bootstrap-4/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Bài trước</span>
+      <span id="i-next" class="info" style="display:none;">Bài tiếp theo</span>
+      <span id="i-top" class="info" style="display:none;">Về đầu trang</span>
+      <span id="i-share" class="info" style="display:none;">Chia sẻ bài viết</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&text=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&title=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&is_video=false&description=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website&body=Check out this article: http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&title=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&title=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&title=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&title=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&name=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&t=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">PhanThanhGit</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-06-02T06:29:19.000Z" itemprop="datePublished">2018-06-02</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Website-Coding/">Website Coding</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/css/" rel="tag">css</a>, <a class="tag-link" href="/tags/html/" rel="tag">html</a>, <a class="tag-link" href="/tags/javascript/" rel="tag">javascript</a>, <a class="tag-link" href="/tags/slideshow-video/" rel="tag">slideshow video</a>, <a class="tag-link" href="/tags/thu-thuat-website/" rel="tag">thủ thuật website</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Slideshow video khá là phổ biến trên nhiều website. Họ dùng để trình chiếu các video quảng cáo, du lịch hay các khoá học,… Tuy nghiên chúng ta luôn tò mò về cách mà họ đã tạo ra slideshow video ó là như thế nào. Vậy thì hôm nay mình xin làm một bài hướng dẫn các bạn tạo slideshow video đơn giản bằng Javascript chỉ với 3 bước đơn giản. <strong>Bước 1:</strong> Chúng ta tiến hành tạo chia layout cho từng bộ phận của slideshow. Các bạn chèn đoạn code html vào website của mình. Mình sẽ giải thích nó ở dưới.</p>
+<div class="slide-video">
+    <div class="play-video">
+        <iframe id="video" width="560" height="315" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>                </iframe>
+    </div>
+    <div class="slide">
+        <div class="all-video">
+            <div class="item">
+                <img class="thumbnail-vd" src="https://img.youtube.com/vi/fxnz1ouehqw/maxresdefault.jpg" id-video="fxnz1ouehqw"/>
+            </div>
+            <div class="item">
+                <img class="thumbnail-vd" src="https://img.youtube.com/vi/oAS8vzr3SxI/maxresdefault.jpg" id-video="oAS8vzr3SxI" />
+            </div>
+            <div class="item">
+                <img class="thumbnail-vd" src="https://img.youtube.com/vi/hibIxiZQgJ8/maxresdefault.jpg" id-video="hibIxiZQgJ8" />
+            </div>
+            <div class="item">
+                <img class="thumbnail-vd" src="https://img.youtube.com/vi/vG\_4FIsH5IY/maxresdefault.jpg" id-video="vG\_4FIsH5IY"/>
+            </div>
+            <div class="item">
+                <img class="thumbnail-vd" src="https://img.youtube.com/vi/gyCqfJAnkJc/maxresdefault.jpg" id-video="gyCqfJAnkJc"/>
+            </div>
+            <div class="item">
+                <img class="thumbnail-vd" src="https://img.youtube.com/vi/Obs5rzZu540/maxresdefault.jpg" id-video="Obs5rzZu540"/>
+            </div>
+        </div>
+
+<pre><code>&lt;/div&gt;</code></pre></div>
+
+<p>Mình sẽ giải thích sơ qua cho các bạn hiểu:</p>
+<ol>
+<li>Đầu tiên là layout bao ngoài cùng <strong>.slide-video</strong> nó sẽ bao toàn bộ tất cả các layout con của slideshow.</li>
+<li>Trong <strong>.slide-video</strong> sẽ gồm 2 bộ phận chính đó là:<ol>
+<li><strong>.play-video</strong>: là khu vực chứa video đang chạy.</li>
+<li><strong>.slide</strong>: chứa danh sách các video nằm trong khu vực để người dùng lựa chọn</li>
+</ol>
+</li>
+<li>Trong phần <strong>.item</strong> là layout chứa hình ảnh thumbnail của video từ <strong>Youtube</strong>. Đường link này có dạng: “<em><a href="https://img.youtube.com/vi/" target="_blank" rel="noopener">https://img.youtube.com/vi/</a><id video youtube>/maxresdefault.jpg</em>“</li>
+</ol>
+<p><strong>Bước 2:</strong> Chúng ta sẽ thêm style cho html ở trên để dễ dàng hình dung. Đây là code css:</p>
+<p>.slide-video {<br>    height: 425px;<br>    width: 580px;<br>    margin: 10px auto;<br>    background: #000;<br>    padding: 10px;<br>}<br>.play-video {<br>    box-sizing: border-box;<br>    width: 580px;<br>    height: 335px;<br>}<br>.slide {<br>    position: relative;<br>    width: 100%;<br>    height: 90px;<br>    overflow-x: auto;<br>}<br>.all-video {<br>    position: absolute;<br>    width: 745px;<br>}<br>.item {<br>    width: 120px;<br>    max-height: 67.5px;<br>    overflow: hidden;<br>    float: left;<br>}<br>.item+.item {<br>    margin-left: 5px;<br>}<br>.thumbnail-vd {<br>    width: 120px;<br>    height: auto;<br>    cursor: pointer;<br>}<br>.thumbnail-vd:hover {<br>    background: #000;<br>    opacity: 0.2;<br>}</p>
+<p>Đây là giao diện hoàn chỉnh của slideshow: <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/Capture.png" alt=""> <strong>Bước 3:</strong> Cuối cùng là mình sẽ viểt Javascript cho slide trên hoạt động được:</p>
+<p>/* Chèn link video đầu tiên hay mặc định khi mới load vào website <em>/<br>document.getElementById(“video”).setAttribute(“src”, “<a href="https://www.youtube.com/embed/99BK0ctSkl4?rel=0&amp;showinfo=0&quot;" target="_blank">https://www.youtube.com/embed/99BK0ctSkl4?rel=0&amp;showinfo=0&quot;</a>);<br>/\</em> xử lý sự kiện khi click chọn video bất kì dưới danh sách video <em>/<br>var btn = document.getElementsByClassName(“thumbnail-vd”);<br>for(i = 0; i &lt; btn.length; i++){<br>    btn[i].addEventListener(“click”, function(){<br>        var id = this.getAttribute(“id-video”); //lấy id của video từ tagname id-video của thẻ đang được click<br>                /*thay link video mới vào vị trí show video ở trên \</em>/<br>        document.getElementById(“video”).setAttribute(“src”, “<a href="https://www.youtube.com/embed/&quot;+id+&quot;?rel=0&amp;showinfo=0&amp;autoplay=1&quot;" target="_blank">https://www.youtube.com/embed/&quot;+id+&quot;?rel=0&amp;showinfo=0&amp;autoplay=1&quot;</a>);<br>    });<br>}</p>
+<p>Đây là thành quả cuối cùng của chúng ta. Chúc các bạn thành công.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&text=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&title=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&is_video=false&description=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website&body=Check out this article: http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&title=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&title=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&title=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&title=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&name=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/06/02/huong-dan-tao-slideshow-video-bang-javascript-don-gian-cho-website/&t=Hướng dẫn tạo slideshow video bằng Javascript đơn giản cho website" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Chia sẻ</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Về đầu trang</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Bản quyền &copy; 2020 dpthanh
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

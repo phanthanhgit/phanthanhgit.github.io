@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang=vi>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Ở bài trước, mình đã hướng dẫn các bạn setup editor để lập trình React Native. Mình nghĩ là ai cũng có thể làm xong các bước trước rồi. Vậy hôm nay mình xin hướng dẫn các bạn dùng phần mềm giải lập No">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native">
+<meta property="og:url" content="http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/index.html">
+<meta property="og:site_name" content="PhanThanhGit">
+<meta property="og:description" content="Ở bài trước, mình đã hướng dẫn các bạn setup editor để lập trình React Native. Mình nghĩ là ai cũng có thể làm xong các bước trước rồi. Vậy hôm nay mình xin hướng dẫn các bạn dùng phần mềm giải lập No">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/nox.png">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/nox-1.png">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/nox-2-700x370.png">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/Capture-1.png">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/Capture-2.png">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/Capture-3.png">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/nox-run-debug-react-native.png">
+<meta property="article:published_time" content="2018-06-23T13:52:42.000Z">
+<meta property="article:modified_time" content="2020-03-13T09:58:52.395Z">
+<meta property="article:author" content="dpthanh">
+<meta property="article:tag" content="android">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="react native">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/nox.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/07/10/lenovo-a6010-huong-dan-up-rom-cook-cho-lenovo-a6010-plus/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/06/22/huong-dan-unlock-like-facebook-unlock-comment-facebook-2019/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Bài trước</span>
+      <span id="i-next" class="info" style="display:none;">Bài tiếp theo</span>
+      <span id="i-top" class="info" style="display:none;">Về đầu trang</span>
+      <span id="i-share" class="info" style="display:none;">Chia sẻ bài viết</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&text=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&title=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&is_video=false&description=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native&body=Check out this article: http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&title=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&title=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&title=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&title=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&name=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&t=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">PhanThanhGit</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-06-23T13:52:42.000Z" itemprop="datePublished">2018-06-23</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/React-Native/">React Native</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/android/" rel="tag">android</a>, <a class="tag-link" href="/tags/javascript/" rel="tag">javascript</a>, <a class="tag-link" href="/tags/react-native/" rel="tag">react native</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Ở bài trước, mình đã hướng dẫn các bạn setup editor để lập trình React Native. Mình nghĩ là ai cũng có thể làm xong các bước trước rồi. Vậy hôm nay mình xin hướng dẫn các bạn dùng phần mềm giải lập Nox để run và debug code. Các bạn vào thư mục project app bài trước mình hướng dẫn chạy sau đó mở terminal hay cmd từ thư mục đó lên và gõ lệnh: <em><strong>react-native run android</strong></em> Chờ cho cho đến khi nó chạy xong, các bạn thể thấy lỗi app-debug ở phần cuối cùng khi kết thúc. Tuy nhiên đừng lo đấy là do nó phát hiện ra thiết bị để cài đặt app-debug thôi. Tiếp theo là <a href="https://vn.bignox.com/" target="_blank" rel="noopener">tải về và cài đặt Nox.</a> Sau khi cài đặt xong, các bạn mở Nox lên, chúng ta tiến hành cài đặt hệ thống cho nó một chút. Các bạn click vào biểu tượng settings phía góc phải trên màn hình Nox. Sau khi click vào bạn sẽ thấy màn hình như vầy hiện ra: <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/nox.png" alt=""> Các bạn chuyển sang tab cài đặt cao cấp. Phần “Cài đặt tính năng” các bạn chọn thấp cho mình nhé. Vì run app debug nên k cần phải set cao tốn bộ nhớ RAM. Phần “Khởi động cài đăt” chọn “bản di động” và chọn 480x800. Ở đây là mình hướng dẫn setting cho bạn nào dùng máy cấu hình thấp. Các bạn muôn trải nghiệm tốt hơn thì cài đặt cấu hình cao lên nhé. Sau khi cài đặt thông số xong, bạn nhấn “Lưu cài đăt” và đồng ý khởi động lại phần mềm. Kết quả sẽ được như thế này. <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/nox-1.png" alt=""> Nguyên liệu đã có đủ chúng ta tiến hành làm bánh. Bạn mở thư mục project của react native lên vào theo link sau “project/android\app\build\outputs\apk” nhấn 2 lần vào file app-debug.apk để cài nó vào Nox. Chờ một lúc bạn sẽ thấy app đó trên Nox. <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/nox-2-700x370.png" alt=""> Và đây chính là cái app-debug.apk đó. <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/Capture-1.png" alt=""> Giờ bạn hãy mở nó lên và nếu có thấy lỗi hiện lên thì đừng có lo lắng, vì còn vài thao tác nữa mới xong. Sau khi mở app lên bạn quay ra ngoài xem Nodejs có đang chạy không? Nếu không thì mở cửa sổ terminal lên và gõ tiếp lệnh <strong><em>npm start .</em></strong> Quay lại cái app demo trên Nox của chúng ta. Các bạn vào biểu tượng 3 dấu gạch ngang trên màn hình Nox ở thanh công cụ bên phải, đó là nút Menu. Sẽ được như thế này. <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/Capture-2.png" alt=""> Nhấn chọn “Dev Settings”, một màn hình mới hiện lên vào các bạn kéo xuống phần DEBUGGING nhân chọn “Debug server host &amp; post for device”. Tiếp theo là bạn nhập theo cú pháp sau “&lt;IP wifi của bạn&gt;:8081”. <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/Capture-3.png" alt=""> Sau đó nhấn “OK”. Các bạn tiếp tục nhấn Menu và chọn “Reload” là xong. <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/nox-run-debug-react-native.png" alt=""> Chúc các bạn thành công. Bài sau mình sẽ đi vào phần đầu tiền là React Navigation. Mình sẽ không đi cụ thể các bài kiểu như kiến thức cơ bản. Vì những cái đó đã quá nhiều bài nói đến rồi. Ở đây mình sẽ hướng dẫn sử dụng cụ thể các cái Component có trong document của React Native.</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&text=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&title=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&is_video=false&description=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native&body=Check out this article: http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&title=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&title=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&title=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&title=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&name=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/06/23/react-native-bai-3-su-dung-nox-gia-lap-de-chay-va-debug-code-react-native/&t=React Native - Bài 3: Sử dụng Nox giả lập để chạy và debug code React Native" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Chia sẻ</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Về đầu trang</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Bản quyền &copy; 2020 dpthanh
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

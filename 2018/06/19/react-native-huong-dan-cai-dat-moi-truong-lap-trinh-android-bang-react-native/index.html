@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang=vi>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Bài 1 - React Native - Hướng dẫn cài đặt môi trường lập trình Android bằng React NativeReact Native là gì?React Native được phát triển bởi Facebook. Facebook muốn tạo ra nền tảng phát triển ứng dụng d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native">
+<meta property="og:url" content="http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/index.html">
+<meta property="og:site_name" content="PhanThanhGit">
+<meta property="og:description" content="Bài 1 - React Native - Hướng dẫn cài đặt môi trường lập trình Android bằng React NativeReact Native là gì?React Native được phát triển bởi Facebook. Facebook muốn tạo ra nền tảng phát triển ứng dụng d">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/huong-dan-cai-dat-moi-truong-lap-trinh-react-native.png">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/react-native-tren-window.png">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/react-native-window.png">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/sdk-react-native.png">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/new-app-react-native.png">
+<meta property="og:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/phanthanhblog-app.png">
+<meta property="article:published_time" content="2018-06-19T15:37:42.000Z">
+<meta property="article:modified_time" content="2020-03-13T09:58:52.395Z">
+<meta property="article:author" content="dpthanh">
+<meta property="article:tag" content="android">
+<meta property="article:tag" content="react native">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://phanthanhblog.com/wp-content/uploads/2018/06/huong-dan-cai-dat-moi-truong-lap-trinh-react-native.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/06/20/react-native-gioi-thieu-va-huong-dan-setup-cong-cu-ho-tro-lap-trinh-react-native/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/06/18/huong-dan-tao-nut-back-to-top-cho-website-bang-jquery-2018/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Bài trước</span>
+      <span id="i-next" class="info" style="display:none;">Bài tiếp theo</span>
+      <span id="i-top" class="info" style="display:none;">Về đầu trang</span>
+      <span id="i-share" class="info" style="display:none;">Chia sẻ bài viết</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&text=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&title=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&is_video=false&description=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native&body=Check out this article: http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&title=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&title=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&title=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&title=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&name=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&t=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bai-1-React-Native-Huong-dan-cai-dat-moi-truong-lap-trinh-Android-bang-React-Native"><span class="toc-number">1.</span> <span class="toc-text">Bài 1 - React Native - Hướng dẫn cài đặt môi trường lập trình Android bằng React Native</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-Native-la-gi"><span class="toc-number">1.1.</span> <span class="toc-text">React Native là gì?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cai-dat-moi-truong-lap-trinh"><span class="toc-number">1.2.</span> <span class="toc-text">Cài đặt môi trường lập trình:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cai-dat-moi-truong-phat-trien-Android"><span class="toc-number">1.3.</span> <span class="toc-text">Cài đặt môi trường phát triển Android:</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">PhanThanhGit</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-06-19T15:37:42.000Z" itemprop="datePublished">2018-06-19</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/React-Native/">React Native</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/android/" rel="tag">android</a>, <a class="tag-link" href="/tags/react-native/" rel="tag">react native</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="Bai-1-React-Native-Huong-dan-cai-dat-moi-truong-lap-trinh-Android-bang-React-Native"><a href="#Bai-1-React-Native-Huong-dan-cai-dat-moi-truong-lap-trinh-Android-bang-React-Native" class="headerlink" title="Bài 1 - React Native - Hướng dẫn cài đặt môi trường lập trình Android bằng React Native"></a><strong>Bài 1 - React Native - Hướng dẫn cài đặt môi trường lập trình Android bằng React Native</strong></h2><h3 id="React-Native-la-gi"><a href="#React-Native-la-gi" class="headerlink" title="React Native là gì?"></a><strong>React Native là gì?</strong></h3><p>React Native được phát triển bởi Facebook. Facebook muốn tạo ra nền tảng phát triển ứng dụng di động đa nền tảng có hiệu năng không thua kém so với ứng dụng được phát triển độc lập cho từng nền tảng. React Native hiện tại chỉ hỗ trợ phát triển ứng dụng di động hệ điều hành Android và iOS. Hiện nay có khá nhiều ứng dụng trong và ngoài nước được phát triển dựa trên nền tảng này. Mình nói sơ vậy thôi chứ thật ra giới thiệu về React Native thì đã có khá nhiều bài viết về nó rồi. Bạn có thể lên Google và tìm từ khoá “React Native” là sẽ thấy một khối các bài viết liên quan.</p>
+<h3 id="Cai-dat-moi-truong-lap-trinh"><a href="#Cai-dat-moi-truong-lap-trinh" class="headerlink" title="Cài đặt môi trường lập trình:"></a><strong>Cài đặt môi trường lập trình:</strong></h3><p>Không lôi thôi nữa, mình vào vấn đề chính đây. Hôm nay, bài đầu tiên trong series React Native cơ bản này, mình xin hướng dẫn các bạn cách cài đặt môi trường để lập trình Android bằng React Native. Đây là link hướng dẫn thiết lập môi trường tại trang chủ của React Native: <strong><em><a href="https://facebook.github.io/react-native/docs/getting-started.html" target="_blank" rel="noopener">Getting Started</a></em></strong>. Bạn nào rành tiếng Anh thì có thể vào trực tiếp link và đọc. Vì trên trang chủ họ đã hướng dẫn rất rõ ràng nên mình sẽ nói sơ qua các công đoạn chính. Đầu tiên là cài đặt các gói cần thiết là Nodejs, Python2, JDK. Để cài đặt 3 gói này, họ khuyên chúng ta là nên cài đặt qua <a href="https://chocolatey.org/" target="_blank" rel="noopener">Chocolatey</a> cho nên đầu tiên các bạn phải tải về và cài đặt Chocolatey trước. Sau khi cài xong, bạn mở cmd window lên (nhớ “Run as Administrator”) và gõ lệnh sau:</p>
+<p>//Gõ lệnh này vào cmd<br>choco install -y nodejs.install python2 jdk8<br>//</p>
+<p>Tiếp đến là cài đặt React Native CLI. Chạy lệnh sau trong cmd hoặc Window Powershell</p>
+<p>//lệnh cài đặt react native cli<br>npm install -g react-native-cli<br>//</p>
+<h3 id="Cai-dat-moi-truong-phat-trien-Android"><a href="#Cai-dat-moi-truong-phat-trien-Android" class="headerlink" title="Cài đặt môi trường phát triển Android:"></a><strong>Cài đặt môi trường phát triển Android:</strong></h3><p><strong>Cài đặt Android Studio:</strong> <a href="https://developer.android.com/studio/index.html" target="_blank" rel="noopener">Bạn tải về và cài đặt Android Studio</a>. Mở file cài đặt, nhớ chọn Custom setup khi chọn loại cài đặt. Các mục sau đây bắt buộc phải được cài đặt:</p>
+<ul>
+<li><code>Android SDK</code></li>
+<li><code>Android SDK Platform</code></li>
+<li><code>Performance (Intel ® HAXM)</code></li>
+<li><code>Android Virtual Device</code>(Phần này mình sẽ hướng các bạn run app debug bằng Nox vì nhiều khi máy tính bạn cấu hình không đủ mạnh để run được Emulator của Android Studio)</li>
+</ul>
+<p>Sau khi cài đặt hoàn tất bạn hãy phần mềm Android Studio lên. Tại màn hình Wellcome to Android Studio, bạn click vào Configure dưới góc phải màn hình và chọn SDK Manager. <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/huong-dan-cai-dat-moi-truong-lap-trinh-react-native.png" alt=""> Tại màn hình SDK Manager, chọn tab “SDK Platforms”, các bạn tick chọn Android 6.0 (Marshmallow), mở rộng mục này ra và tick chọn các mục sau nằm trong nó:</p>
+<ul>
+<li><code>Google APIs</code></li>
+<li><code>Android SDK Platform 23</code></li>
+<li><code>Intel x86 Atom_64 System Image</code></li>
+<li><code>Google APIs Intel x86 Atom_64 System Image</code></li>
+</ul>
+<p>Sau đó nhấn “Next” và chấp nhận cài đặt. Chờ cho nó tải về và cài đặt xong chúng ta sang bước tiếp theo. Chuyển tiếp sáng tab “SDK Tools” tick chọn “Show Package Details” nhìn lên bảng hiển thị phía trên và tick chọn “Android SDK Build-Tools” version 23.0.1. <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/react-native-tren-window.png" alt=""> Nhấn “Apply” &gt;&gt; “OK” để tải về và cài đặt. <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/react-native-window.png" alt=""> <strong>Cấu hình biến môi trường ANDROID_HOME:</strong> Mở <strong>Controll Panel</strong> lên chọn mục “<strong>System and Security</strong>“ &gt;&gt; “<strong>System</strong>“ &gt;&gt; “<strong>Advanced system settings</strong>“ &gt; “*<em>Environment Variables”. *</em>Tiếp theo nhấn vào “New” và thêm đường dẫn và tên như hình bên dưới: <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/sdk-react-native.png" alt=""> Đường dẫn “Variable value” có cấu trúc như sau:</p>
+<p>// YOUR_USERNAME là tên người dùng máy tính của bạn, ở đây của mình là “MyPC”<br>c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk<br>//</p>
+<p>Tạo thử một project để kiểm tra này: Mở Window powsershell và mở giả lập máy android Emulator lên và chạy lần lượt các lệnh sau:</p>
+<p>//Lệnh tạo project mới<br>react-native init AwesomeProject<br>//Di chuyển vào thư mục project<br>cd AwesomeProject<br>//Chạy thử ứng dụng trên Android<br>react-native run-android</p>
+<p>Thành quả của chúng ta sẽ được như sau: <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/new-app-react-native.png" alt=""> Giới thiệu với các bạn đây là ứng dụng Phan Thanh Blog được mình viết bằng React Native cho chính website của mình. <img src="https://phanthanhblog.com/wp-content/uploads/2018/06/phanthanhblog-app.png" alt=""> Chúc các bạn thành công. Theo dõi mình để chờ bài hướng dẫn tiếp theo nhé. Phần đến mình sẽ hướng dẫn các bạn cách chạy file app debug trên điện thoại và trình giả lập Nox .</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bai-1-React-Native-Huong-dan-cai-dat-moi-truong-lap-trinh-Android-bang-React-Native"><span class="toc-number">1.</span> <span class="toc-text">Bài 1 - React Native - Hướng dẫn cài đặt môi trường lập trình Android bằng React Native</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-Native-la-gi"><span class="toc-number">1.1.</span> <span class="toc-text">React Native là gì?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cai-dat-moi-truong-lap-trinh"><span class="toc-number">1.2.</span> <span class="toc-text">Cài đặt môi trường lập trình:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cai-dat-moi-truong-phat-trien-Android"><span class="toc-number">1.3.</span> <span class="toc-text">Cài đặt môi trường phát triển Android:</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&text=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&title=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&is_video=false&description=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native&body=Check out this article: http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&title=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&title=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&title=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&title=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&name=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/06/19/react-native-huong-dan-cai-dat-moi-truong-lap-trinh-android-bang-react-native/&t=React Native -Bài 1: Hướng dẫn cài đặt môi trường lập trình Android bằng React Native" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Chia sẻ</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Về đầu trang</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Bản quyền &copy; 2020 dpthanh
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

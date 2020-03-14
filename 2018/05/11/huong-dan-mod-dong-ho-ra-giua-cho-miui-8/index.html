@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang=vi>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Chỉ với vài thao tác đơn giản bạn có thể biến status bar của MIUI 8 trông giống ios với đồng hồ ra giữa, sóng wifi sang trái, …. Công cụ:  apktool từ 2.1 trở lên Các file apk gồm: framework-res.apk, f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hướng dẫn mod đồng hồ ra giữa cho MIUI 8">
+<meta property="og:url" content="http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/index.html">
+<meta property="og:site_name" content="PhanThanhGit">
+<meta property="og:description" content="Chỉ với vài thao tác đơn giản bạn có thể biến status bar của MIUI 8 trông giống ios với đồng hồ ra giữa, sóng wifi sang trái, …. Công cụ:  apktool từ 2.1 trở lên Các file apk gồm: framework-res.apk, f">
+<meta property="og:locale" content="vi_VN">
+<meta property="article:published_time" content="2018-05-11T04:33:00.000Z">
+<meta property="article:modified_time" content="2020-03-13T09:58:52.394Z">
+<meta property="article:author" content="dpthanh">
+<meta property="article:tag" content="android">
+<meta property="article:tag" content="mod">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=16">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=192" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="https://www.gravatar.com/avatar/3f5d3abd443304aa1baa93db3291700f?s=180">
+          
+        
+    
+    <!-- title -->
+    <title>Hướng dẫn mod đồng hồ ra giữa cho MIUI 8</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/05/13/huong-dan-them-customer-chat-facebook-livechat-facebook-vao-website/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/05/11/chia-se-template-blogger-material-cyan-chuan-seo/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Bài trước</span>
+      <span id="i-next" class="info" style="display:none;">Bài tiếp theo</span>
+      <span id="i-top" class="info" style="display:none;">Về đầu trang</span>
+      <span id="i-share" class="info" style="display:none;">Chia sẻ bài viết</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&text=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&title=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&is_video=false&description=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8&body=Check out this article: http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&title=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&title=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&title=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&title=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&name=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&t=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Hướng dẫn mod đồng hồ ra giữa cho MIUI 8
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">PhanThanhGit</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-05-11T04:33:00.000Z" itemprop="datePublished">2018-05-11</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Mod-Android/">Mod Android</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/android/" rel="tag">android</a>, <a class="tag-link" href="/tags/mod/" rel="tag">mod</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Chỉ với vài thao tác đơn giản bạn có thể biến status bar của MIUI 8 trông giống ios với đồng hồ ra giữa, sóng wifi sang trái, …. <strong>Công cụ:</strong></p>
+<ol>
+<li>apktool từ 2.1 trở lên</li>
+<li>Các file apk gồm: framework-res.apk, framework-ext-res.apk, miui.apk, MiuiSystemUI.apk</li>
+<li>Notepad++</li>
+</ol>
+<p><strong>Các bước thực hiện:</strong></p>
+<ol>
+<li>Cài đặt framework cho apktool: Ở đây các bạn cài 3 file framework-res.apk, framework-ext-res.apk, miui.apk</li>
+<li>Decompile MiuiSystemUI.apk được thư mục MiuiSystemUI</li>
+<li>Tìm file theo đường dẫn res/layout/status_bar_simple.xml</li>
+<li>Thay toàn bộ code trong file status_bar_simple.xml bằng code sau:</li>
+</ol>
+<?xml version="1.0" encoding="utf-8"?>
+<p>&lt;com.android.systemui.statusbar.phone.SimpleStatusBar android:gravity=”center_vertical” android:layout_width=”fill_parent” android:layout_height=”@dimen/status_bar_height”<br>  xmlns:android=”<a href="http://schemas.android.com/apk/res/android&quot;&gt;" target="_blank" rel="noopener">http://schemas.android.com/apk/res/android&quot;&gt;</a><br>    &lt;com.android.systemui.statusbar.phone.BatteryIndicator android:layout_gravity=”top” android:id=”@id/battery_indicator” android:visibility=”gone” android:layout_width=”fill_parent” android:layout_height=”wrap_content” android:src=”@drawable/battery_indicator” android:scaleType=”fitXY” /&gt;<br>    &lt;LinearLayout android:orientation=”horizontal” android:id=”@id/icons” android:paddingLeft=”3.0dip” android:paddingRight=”3.0dip” android:layout_width=”fill_parent” android:layout_height=”fill_parent”&gt;<br>        &lt;LinearLayout android:gravity=”left” android:paddingRight=”3.0dip” android:layout_width=”0.0dip” android:layout_height=”fill_parent” android:layout_weight=”1.0”&gt;<br>            &lt;LinearLayout android:gravity=”center_vertical” android:id=”@id/signal_cluster_container” android:layout_width=”0.0dip” android:layout_height=”fill_parent” android:layout_weight=”1.0”&gt;<br>                &lt;include android:id=”@id/signal_cluster” android:layout_width=”wrap_content” android:layout_height=”wrap_content” layout=”@layout/signal_cluster_view” /&gt;<br>                &lt;include android:id=”@id/signal_cluster2” android:visibility=”gone” android:layout_width=”wrap_content” android:layout_height=”wrap_content” layout=”@layout/signal_cluster_view” /&gt;<br>                &lt;com.android.systemui.statusbar.NetworkSpeedView android:textAppearance=”@style/TextAppearance.StatusBar.Carrier” android:gravity=”center|left” android:id=”@id/network_speed_view” android:paddingBottom=”@dimen/statusbar_text_bottom_padding” android:visibility=”gone” android:layout_width=”wrap_content” android:layout_height=”fill_parent” android:layout_marginLeft=”3.0dip” android:layout_marginRight=”3.0dip” android:singleLine=”true” /&gt;<br>                &lt;LinearLayout android:gravity=”center|right” android:id=”@id/notification_icon_area” android:layout_width=”wrap_content” android:layout_height=”fill_parent”&gt;<br>                    &lt;com.android.systemui.statusbar.StatusBarIconView android:id=”@id/notification_more_icon” android:visibility=”gone” android:layout_width=”wrap_content” android:layout_height=”fill_parent” android:src=”@drawable/stat_notify_more” /&gt;<br>                    &lt;com.android.systemui.statusbar.phone.IconMerger android:gravity=”center_vertical” android:id=”@id/notificationIcons” android:layout_width=”wrap_content” android:layout_height=”fill_parent” /&gt;<br>                </LinearLayout><br>            </LinearLayout><br>        </LinearLayout><br>        &lt;LinearLayout android:layout_gravity=”center” android:layout_width=”wrap_content” android:layout_height=”fill_parent”&gt;<br>            &lt;com.android.systemui.statusbar.policy.Clock android:textAppearance=”@style/TextAppearance.StatusBar.Clock” android:gravity=”start|center” android:id=”@id/clock” android:paddingBottom=”@dimen/statusbar_text_bottom_padding” android:layout_width=”wrap_content” android:layout_height=”fill_parent” android:singleLine=”true” android:paddingStart=”3.0dip” android:paddingEnd=”3.0dip” /&gt;<br>        </LinearLayout><br>        &lt;LinearLayout android:gravity=”right” android:layout_gravity=”right” android:paddingLeft=”3.0dip” android:layout_width=”0.0dip” android:layout_height=”fill_parent” android:layout_weight=”1.0”&gt;<br>            &lt;com.android.systemui.statusbar.phone.StatusBarIcons android:gravity=”end|center” android:id=”@id/statusbar_icon” android:layout_width=”wrap_content” android:layout_height=”fill_parent” android:layout_alignParentEnd=”true”&gt;<br>                &lt;com.android.systemui.statusbar.StatusBarIconView android:id=”@id/moreIcon” android:visibility=”gone” android:layout_width=”wrap_content” android:layout_height=”fill_parent” android:src=”@drawable/stat_notify_more” /&gt;<br>                &lt;LinearLayout android:gravity=”center_vertical” android:orientation=”horizontal” android:id=”@id/statusIcons” android:layout_width=”wrap_content” android:layout_height=”fill_parent” /&gt;<br>                &lt;ImageView android:id=”@id/battery_charging_icon” android:layout_width=”wrap_content” android:layout_height=”fill_parent” /&gt;<br>                &lt;TextView android:textAppearance=”@style/TextAppearance.StatusBar.Battery” android:gravity=”center” android:id=”@id/battery_num” android:paddingBottom=”@dimen/statusbar_battery_text_bottom_padding” android:layout_width=”wrap_content” android:layout_height=”fill_parent” android:layout_marginStart=”1.0dip” android:layout_marginEnd=”3.0dip” /&gt;<br>                &lt;com.android.systemui.statusbar.phone.BatteryStatusIconView android:id=”@id/battery” android:layout_width=”wrap_content” android:layout_height=”wrap_content” /&gt;<br>            &lt;/com.android.systemui.statusbar.phone.StatusBarIcons&gt;<br>        </LinearLayout><br>    </LinearLayout><br>&lt;/com.android.systemui.statusbar.phone.SimpleStatusBar&gt;</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&text=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&title=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&is_video=false&description=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8&body=Check out this article: http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&title=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&title=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&title=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&title=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&name=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://phanthanhblog.com/2018/05/11/huong-dan-mod-dong-ho-ra-giua-cho-miui-8/&t=Hướng dẫn mod đồng hồ ra giữa cho MIUI 8" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Chia sẻ</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Về đầu trang</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Bản quyền &copy; 2020 dpthanh
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Trang chủ</a></li>
+         
+          <li><a href="/tags/">Thẻ</a></li>
+         
+          <li><a href="/categories/">Thể loại</a></li>
+         
+          <li><a href="/archives/">Bài viết</a></li>
+         
+          <li><a href="/search/">Tìm kiếm</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
